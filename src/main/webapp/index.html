@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Employee Registration Form</title>
+  <style>
+    /* Reset box-sizing for all elements */
+    * {
+      box-sizing: border-box;
+    }
+    /* Body styling with background gradient and centered content */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+      margin: 0;
+      padding-top: 70px; /* leave space for fixed header */
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    /* Fixed header styling for form title */
+    h2 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0;
+      background: #4a90e2;
+      color: white;
+      padding: 18px 0;
+      text-align: center;
+      font-weight: 700;
+      font-size: 24px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+      user-select: none;
+      letter-spacing: 1.1px;
+    }
+    /* Form container styling with grid for horizontal layout */
+    form {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      max-width: 900px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 columns for horizontal alignment */
+      gap: 15px 25px;
+      align-items: center;
+    }
+    /* Label styling */
+    label {
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 6px;
+      display: block;
+    }
+    /* Inputs, selects, textarea styling */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1.8px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+      font-family: inherit;
+    }
+    /* Focus styles for form controls */
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="number"]:focus,
+    input[type="date"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #4a90e2;
+      outline: none;
+      box-shadow: 0 0 6px #4a90e2a0;
+    }
+    /* Make textarea span two columns */
+    textarea {
+      resize: vertical;
+      grid-column: span 2;
+    }
+    /* Submit button styling, spans all columns */
+    input[type="submit"] {
+      grid-column: span 4;
+      padding: 14px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background: #4a90e2;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+    /* Submit button hover effect */
+    input[type="submit"]:hover {
+      background: #357abd;
+    }
+    /* Responsive layout for smaller screens */
+    @media (max-width: 720px) {
+      form {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      textarea {
+        grid-column: span 2;
+      }
+      input[type="submit"] {
+        grid-column: span 2;
+      }
+    }
+    @media (max-width: 400px) {
+      form {
+        grid-template-columns: 1fr;
+      }
+      textarea,
+      input[type="submit"] {
+        grid-column: span 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed header title -->
+  <h2>Employee Registration Form</h2>
+
+  <!-- Registration form starts here -->
+  <form action="submitform" method="post" novalidate>
+    
+    <!-- Employee ID -->
+    <div>
+      <label for="empId">Employee ID:</label>
+      <input type="text" id="empId" name="empId" required />
+    </div>
+    
+    <!-- First Name -->
+    <div>
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" required />
+    </div>
+    
+    <!-- Last Name -->
+    <div>
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" required />
+    </div>
+    
+    <!-- Date of Birth -->
+    <div>
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required />
+    </div>
+    
+    <!-- Gender Selection -->
+    <div>
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    
+    <!-- Email Address -->
+    <div>
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+    
+    <!-- Phone Number -->
+    <div>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required />
+    </div>
+    
+    <!-- Home Address textarea, spans two columns -->
+    <div>
+      <label for="address">Home Address:</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+    </div>
+    
+    <!-- City -->
+    <div>
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required />
+    </div>
+    
+    <!-- State -->
+    <div>
+      <label for="state">State:</label>
+      <input type="text" id="state" name="state" required />
+    </div>
+    
+    <!-- ZIP Code -->
+    <div>
+      <label for="zip">ZIP Code:</label>
+      <input type="text" id="zip" name="zip" required />
+    </div>
+    
+    <!-- Department -->
+    <div>
+      <label for="department">Department:</label>
+      <input type="text" id="department" name="department" required />
+    </div>
+    
+    <!-- Designation -->
+    <div>
+      <label for="designation">Designation:</label>
+      <input type="text" id="designation" name="designation" required />
+    </div>
+    
+    <!-- Date of Joining -->
+    <div>
+      <label for="doj">Date of Joining:</label>
+      <input type="date" id="doj" name="doj" required />
+    </div>
+    
+    <!-- Salary -->
+    <div>
+      <label for="salary">Salary:</label>
+      <input type="number" id="salary" name="salary" required min="0" />
+    </div>
+    
+    <!-- Submit button -->
+    <input type="submit" value="Register" />
+  </form>
+
+</body>
+</html>
