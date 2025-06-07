@@ -66,7 +66,7 @@ public class Employee extends HttpServlet {
 		// Prepare response writer to send output back to client
 		PrintWriter out = response.getWriter();
 
-		// Print all received values in <h1> tags on the response page
+		// Print all response
 		out.print("<h3>" + empidfinal + "</h3>");
 		out.print("<h3>" + firstname1 + "</h3>");
 		out.print("<h3>" + lastname1 + "</h3>");
