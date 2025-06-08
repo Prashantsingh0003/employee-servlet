@@ -1,9 +1,5 @@
 
 
-### 🔹 1. Registration Form (Before Submission)
-![image](https://github.com/user-attachments/assets/cd3d0839-76fb-44bf-88c2-6ed2e014825b)
-
-
 ````markdown
 # Employee Registration System 🚀
 
@@ -86,10 +82,6 @@ This is a **Java EE Web Application** for registering employees into a MySQL dat
 
 
 ![image](https://github.com/user-attachments/assets/cd3d0839-76fb-44bf-88c2-6ed2e014825b)
-
-### 🔹 2. Success Message After Submission
-
-![Success View](screenshots/form-success.png)
 
 ### 🔹 3. MySQL Database Record
 
